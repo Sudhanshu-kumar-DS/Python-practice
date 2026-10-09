@@ -1,0 +1,28 @@
+'''Write a function longest_run(L) that takes a list of integers and returns the length of the longest consecutive run of the same number.
+
+A run means the same number appears continuously.
+
+Examples:
+
+longest_run([1, 1, 2, 2, 2, 3, 3])
+
+Output:
+
+3
+
+Because 2 occurs consecutively 3 times.'''
+
+#ANSWER
+def longest_run(l):
+    d = {}
+    for i in l:
+        if i in d:
+            d[i] +=1
+        else:
+            d[i] =1
+
+    p = max(d,key = d.get)
+    return d[p]
+
+print(longest_run([1, 1, 2, 2, 2, 3, 3]))
+
